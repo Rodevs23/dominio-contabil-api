@@ -1,0 +1,31 @@
+name = "dominio-contabil-api"
+main = "src/index.js"
+compatibility_date = "2024-06-08"
+compatibility_flags = ["nodejs_compat"]
+
+# Variáveis de ambiente
+[env.production.vars]
+DOMINIO_BASE_URL = "https://api.onvio.com.br"
+THOMSON_AUTH_URL = "https://auth.thomsonreuters.com"
+THOMSON_AUDIENCE = "409f91f6-dc17-44c8-a5d8-e0a1bafd8b67"
+APIKEY_HEADER = "X-API-Key"
+
+# Secrets (configurar via wrangler secret put)
+# THOMSON_CLIENT_ID
+# THOMSON_CLIENT_SECRET
+# API_SECRET_KEY
+
+# KV para cache
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your_kv_namespace_id"
+preview_id = "your_preview_kv_namespace_id"
+
+# D1 para logs e dados
+[[d1_databases]]
+binding = "DB"
+database_name = "dominio-api-db"
+database_id = "your_database_id"
+
+[build]
+command = "npm run build"
