@@ -1,0 +1,7 @@
+name = "dominio-contabil-api"
+main = "src/index-test.js"
+compatibility_date = "2024-06-08"
+
+# Configuração para teste inicial (sem dependências externas)
+[env.production.vars]
+API_VERSION = "1.0.0-test"
